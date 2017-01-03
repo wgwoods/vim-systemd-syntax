@@ -66,7 +66,7 @@ syn match sdDocUri         contained /\%(https\=:\/\/\|file:\|info:\|man:\)\S\+\
 " [Install] {{{1
 " see systemd.unit(5)
 syn region sdInstallBlock matchgroup=sdHeader start=/^\[Install\]/ end=/^\[/me=e-2 contains=sdInstallKey
-syn match sdInstallKey contained /^\%(WantedBy\|Alias\|Also\)=/ nextgroup=sdUnitList
+syn match sdInstallKey contained /^\%(WantedBy\|Alias\|Also\|RequiredBy\)=/ nextgroup=sdUnitList
 
 " Execution options common to [Service|Socket|Mount|Swap] {{{1
 " see systemd.exec(5)
