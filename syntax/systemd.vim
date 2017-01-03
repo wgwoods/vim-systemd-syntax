@@ -200,6 +200,7 @@ syn match sdMountKey contained /^\%(What\|Type\|Options\)=/
 syn region sdSwapBlock matchgroup=sdHeader start=/^\[Swap\]/ end=/^\[/me=e-2 contains=sdSwapKey,sdExecKey
 syn match sdSwapKey contained /^What=/ nextgroup=sdFilename,sdErr
 syn match sdSwapKey contained /^Priority=/ nextgroup=sdUInt,sdErr
+syn match sdSwapKey contained /^Options=/
 
 " [Path]
 syn region sdPathBlock matchgroup=sdHeader start=/^\[Path\]/ end=/^\[/me=e-2 contains=sdPathKey
