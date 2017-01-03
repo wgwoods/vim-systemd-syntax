@@ -11,7 +11,7 @@ syntax highlighting and filetype detection for systemd unit files!
 ## Installation
 
 1. Set up [pathogen](https://github.com/tpope/vim-pathogen)
-2. `git clone https://github.com/wgwoods/vim-systemd-syntax ~/.vim/bundle/`
+2. `cd ~/.vim/bundle; git clone https://github.com/wgwoods/vim-systemd-syntax`
 
 Or just drop the two `.vim` files in `~/.vim/syntax` and `~/.vim/ftdetect`
 manually. I'm sure you'll figure it out, you red-hot vim hacker you.
