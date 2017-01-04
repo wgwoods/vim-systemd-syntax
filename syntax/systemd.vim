@@ -29,6 +29,7 @@ syn match sdDuration contained nextgroup=sdErr /\d\+/
 syn match sdDuration contained nextgroup=sdErr /\%(\d\+\s*\%(usec\|msec\|seconds\=\|minutes\=\|hours\=\|days\=\|weeks\=\|months\=\|years\=\|us\|ms\|sec\|min\|hr\|[smhdwMy]\)\s*\)\+/
 syn match sdDatasize contained nextgroup=sdErr /\d\+[KMGT]/
 syn match sdFilename contained nextgroup=sdErr /\/\S*/
+syn match sdPercent  contained nextgroup=sdErr /\d\+%/
 syn keyword sdBool   contained nextgroup=sdErr 1 yes true on 0 no false off
 syn match sdUnitName contained /\S\+\.\(automount\|mount\|swap\|socket\|service\|target\|path\|timer\|device\)\_s/
 
