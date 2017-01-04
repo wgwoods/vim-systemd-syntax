@@ -56,10 +56,13 @@ syn match sdUnitKey contained /^ConditionVirtualization=|\=!\=/ contains=sdCondi
 syn match sdUnitKey contained /^ConditionSecurity=|\=!\=/ contains=sdConditionFlag nextgroup=sdSecurityType,sdErr
 syn match sdUnitKey contained /^ConditionCapability=|\=!\=/ contains=sdConditionFlag nextgroup=sdAnyCapName,sdErr
 syn match sdUnitKey contained /^Condition\%(KernelCommandLine\|Host\)=|\=!\=/ contains=sdConditionFlag
-syn match sdUnitKey contained /^Condition\%(ACPower\|Null\)=|\=/ contains=sdConditionFlag nextgroup=sdBool,sdErr
+syn match sdUnitKey contained /^Condition\%(ACPower\|Null\|FirstBoot\)=|\=/ contains=sdConditionFlag nextgroup=sdBool,sdErr
+syn match sdUnitKey contained /^ConditionNeedsUpdate=|\=!\=/ contains=sdConditionFlag nextgroup=sdCondUpdateDir,sdErr
+
 " extra bits
 syn match sdUnitList       contained /.*/ contains=sdUnitName,sdErr
 syn match sdConditionFlag  contained /[!|]/
+syn match sdCondUpdateDir  contained nextgroup=sdErr /\%(\/etc\|\/var\)/
 syn keyword sdVirtType     contained nextgroup=sdErr vm container qemu kvm vmware microsoft oracle xen bochs chroot openvz lxc lxc-libvirt systemd-nspawn
 syn keyword sdSecurityType contained nextgroup=sdErr selinux
 syn keyword sdFailJobMode  contained nextgroup=sderr fail replace replace-irreversibly
