@@ -98,7 +98,7 @@ syn match sdExecKey contained /^IOSchedulingClass=/ nextgroup=sdIOSchedClass,sdE
 syn match sdExecKey contained /^IOSchedulingPriority=/ nextgroup=sdIOSchedPrio,sdErr
 syn match sdExecKey contained /^CPUSchedulingPolicy=/ nextgroup=sdCPUSchedPol,sdErr
 syn match sdExecKey contained /^MountFlags=/ nextgroup=sdMountFlags,sdErr
-syn match sdExecKey contained /^IgnoreSIGPIPE=/ nextgroup=sdBool,sdErr
+syn match sdExecKey contained /^\%(IgnoreSIGPIPE\|MemoryDenyWriteExecute\)=/ nextgroup=sdBool,sdErr
 syn match sdExecKey contained /^Environment=/ nextgroup=sdEnvDefs
 syn match sdExecKey contained /^EnvironmentFile=-\=/ contains=sdEnvDashFlag nextgroup=sdFilename,sdErr
 
