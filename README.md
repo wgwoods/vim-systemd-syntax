@@ -10,16 +10,19 @@ syntax highlighting and filetype detection for systemd unit files!
 
 ## Installation
 
-1. Set up [pathogen](https://github.com/tpope/vim-pathogen)
-2. `cd ~/.vim/bundle; git clone https://github.com/wgwoods/vim-systemd-syntax`
+You can install `wgwoods/vim-systemd-syntax` pretty easily with your favorite
+Vim plugin manager. (If you don't have one already,
+[vim-plug](https://github.com/junegunn/vim-plug) is nice and simple.)
 
-Or just drop the two `.vim` files in `~/.vim/syntax` and `~/.vim/ftdetect`
-manually. I'm sure you'll figure it out, you red-hot vim hacker you.
+This should probably work too:
 
-## History
+    mkdir -p ~/.vim/plugin
+    cd ~/.vim/plugin
+    git clone https://github.com/wgwoods/vim-systemd-syntax
 
-I split this out of https://github.com/wgwoods/vim-scripts because it turns out
-people were (re)packaging it separately?
+Or you can just drop the three `.vim` files in `~/.vim/syntax`,
+`~/.vim/ftdetect`, and `/.vim/ftplugin` manually. I'm sure you'll figure it
+out, you red-hot vim hacker you.
 
 ## TODO
 
@@ -29,6 +32,7 @@ people were (re)packaging it separately?
   so it's always up-to-date
     * Heck why doesn't [systemd] do that as part of its build?
 * Contribute script to [systemd] that generates `syntax/systemd.vim` for us
+* Retire to a life of leisure
 
 [systemd]: https://github.com/systemd/systemd/
 
