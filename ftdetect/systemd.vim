@@ -6,3 +6,4 @@ au BufNewFile,BufRead *.socket    set filetype=systemd
 au BufNewFile,BufRead *.swap      set filetype=systemd
 au BufNewFile,BufRead *.target    set filetype=systemd
 au BufNewFile,BufRead *.timer     set filetype=systemd
+au BufNewFile,BufRead *.slice     set filetype=systemd
