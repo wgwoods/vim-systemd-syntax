@@ -159,7 +159,7 @@ syn match sdExecKey contained /^Environment=/ nextgroup=sdEnvDefs
 syn match sdExecKey contained /^EnvironmentFile=-\=/ contains=sdEnvDashFlag nextgroup=sdFilename,sdErr
 
 syn match   sdExecFlag      contained /-\=@\=/ nextgroup=sdExecFile,sdErr
-syn match   sdExecFile      contained /\/\S\+/ nextgroup=sdExecArgs
+syn match   sdExecFile      contained /\S\+/ nextgroup=sdExecArgs
 syn match   sdExecArgs      contained /.*/ contains=sdEnvArg
 syn match   sdEnvDefs       contained /.*/ contains=sdEnvDef
 syn match   sdEnvDashFlag   contained /-/ nextgroup=sdFilename,sdErr
