@@ -106,7 +106,7 @@ syn keyword sdFailAction   contained nextgroup=sdErr exit exit-force
 syn keyword sdArch         contained nextgroup=sdErr x86 x86_64 ppc ppc-le ppc64 ppc64-le ia64 parisc parisc64 s390 s390x sparc sparc64 mips mips-le mips64 mips64-le alpha arm arm-be arm64 arm64-be sh sh64 m68k tilegx cris arc arc-be native
 syn keyword sdController   contained cpu cpuacct io blkio memory devices pids nextgroup=sdController,sdErr
 syn match sdCondUser       contained /@system/
-syn match sdUser           contained nextgroup=sdErr /\d\+\|[A-Za-z_][A-Za-z0-9_-]*/
+syn match sdUser           contained nextgroup=sdErr /\d\+\|[A-Za-z_%][A-Za-z0-9_%-]*/
 syn match sdExitStatus     contained nextgroup=sdErr /\d\|\d\d\|[01]\d\d\|2[0-4]\d\|25[0-5]/
 syn match sdDocUri         contained /\%(https\=:\/\/\|file:\|info:\|man:\)\S\+\s*/ nextgroup=sdDocUri,sdErr
 
