@@ -138,10 +138,10 @@ syn match sdExecKey contained /^\%(SupplementaryGroups\|CPUAffinity\|SyslogIdent
 syn match sdExecKey contained /^Limit\%(CPU\|FSIZE\|DATA\|STACK\|CORE\|RSS\|NOFILE\|AS\|NPROC\|MEMLOCK\|LOCKS\|SIGPENDING\|MSGQUEUE\|NICE\|RTPRIO\|RTTIME\)=/ nextgroup=sdRlimit
 syn match sdExecKey contained /^\%(CPUSchedulingResetOnFork\|TTYReset\|TTYVHangup\|TTYVTDisallocate\|SyslogLevelPrefix\|ControlGroupModify\|DynamicUser\|RemoveIPC\|NoNewPrivileges\|RestrictRealtime\|RestrictSUIDSGID\|LockPersonality\|MountAPIVFS\)=/ nextgroup=sdBool,sdErr
 syn match sdExecKey contained /^Private\%(Tmp\|Network\|Devices\|Users\|Mounts\)=/ nextgroup=sdBool,sdErr
-syn match sdExecKey contained /^Protect\%(KernelTunables\|KernelModules\|KernelLogs\|Clock\|ControlGroups\|Hostname\)=/ nextgroup=sdBool,sdErr
+syn match sdExecKey contained /^Protect\%(KernelTunables\|KernelModules\|KernelLogs\|Clock\|ControlGroups\|Hostname\|Home\)=/ nextgroup=sdBool,sdErr
 syn match sdExecKey contained /^\%(Nice\|OOMScoreAdjust\)=/ nextgroup=sdInt,sdErr
 syn match sdExecKey contained /^\%(CPUSchedulingPriority\|TimerSlackNSec\)=/ nextgroup=sdUInt,sdErr
-syn match sdExecKey contained /^\%(ReadWrite\|ReadOnly\|Inaccessible\)Directories=/ nextgroup=sdFileList
+syn match sdExecKey contained /^\%(ReadWrite\|ReadOnly\|Inaccessible\)Paths=/ nextgroup=sdFileList
 syn match sdExecKey contained /^CapabilityBoundingSet=/ nextgroup=sdCapNameList
 syn match sdExecKey contained /^Capabilities=/ nextgroup=sdCapability,sdErr
 syn match sdExecKey contained /^UMask=/ nextgroup=sdOctal,sdErr
