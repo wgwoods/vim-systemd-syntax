@@ -190,6 +190,8 @@ syn match   sdCapability    contained /\%(\%([A-Za-z_]\+,\=\)*\|all\)\%(=[eip]*\
 syn keyword sdStdin         contained nextgroup=sdErr null tty-force tty-fail socket tty
 syn match   sdStdout        contained nextgroup=sdErr /\%(syslog\|kmsg\|journal\)\%(+console\)\=/
 syn keyword sdStdout        contained nextgroup=sdErr inherit null tty socket
+syn match   sdStdout        contained /fd:/
+syn match   sdStdout        contained nextgroup=sdFilename,sdErr /\v%(file|append):/
 syn keyword sdSyslogFacil   contained nextgroup=sdErr kern user mail daemon auth syslog lpr news uucp cron authpriv ftp
 syn match   sdSyslogFacil   contained nextgroup=sdErr /\<local[0-7]\>/
 syn keyword sdSyslogLevel   contained nextgroup=sdErr emerg alert crit err warning notice info debug
@@ -211,7 +213,7 @@ syn match sdKillKey  contained /^\%(SendSIGKILL\|SendSIGHUP\)=/ nextgroup=sdBool
 
 syn keyword sdSignal      contained nextgroup=sdErr SIGHUP SIGINT SIGQUIT SIGKILL SIGTERM SIGUSR1 SIGUSR2
 syn match   sdOtherSignal contained nextgroup=sdErr /\<\%(\d\+\|SIG[A-Z]\{2,6}\)\>/
-syn match   sdKillMode    contained nextgroup=sdErr /\%(control-group\|process\|none\)/
+syn match   sdKillMode    contained nextgroup=sdErr /\%(control-group\|mixed\|process\|none\)/
 
 " Resource Control options for [Service|Socket|Mount|Swap|Slice|Scope] {{{1
 " see systemd.resource-control(5)
