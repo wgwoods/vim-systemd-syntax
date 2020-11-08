@@ -161,9 +161,14 @@ syn match sdExecKey contained /^EnvironmentFile=-\=/ contains=sdEnvDashFlag next
 syn match   sdExecFlag      contained /-\=@\=/ nextgroup=sdExecFile,sdErr
 syn match   sdExecFile      contained /\S\+/ nextgroup=sdExecArgs
 syn match   sdExecArgs      contained /.*/ contains=sdEnvArg
-syn match   sdEnvDefs       contained /.*/ contains=sdEnvDef
+syn match   sdEnvDefs       contained /.*/ contains=sdEnvDef,sdEnvSQuotes,sdEnvDQuotes
 syn match   sdEnvDashFlag   contained /-/ nextgroup=sdFilename,sdErr
-syn match   sdEnvDef        contained /\i\+=/he=e-1
+syn match   sdEnvDef        contained /\i\+=/he=e-1 nextgroup=sdEnvValue
+syn match   sdEnvDefQuoted  contained /['"]\@<=\i\+=/he=e-1
+hi link sdEnvDefQuoted sdEnvDef
+syn region  sdEnvSQuotes    contained start=/'/ skip=+\\'+ end=/'/ contains=sdEnvDefQuoted
+syn region  sdEnvDQuotes    contained start=/"/ skip=+\\"+ end=/"/ contains=sdEnvDefQuoted
+syn match   sdEnvValue      contained /\S*/
 syn match   sdFileList      contained /.*/ contains=sdFilename,sdErr
 " CAPABILITIES WOOO {{{
 syn case ignore
