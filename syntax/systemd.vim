@@ -141,7 +141,9 @@ syn match sdExecKey contained /^Private\%(Tmp\|Network\|Devices\|Users\|Mounts\)
 syn match sdExecKey contained /^Protect\%(KernelTunables\|KernelModules\|KernelLogs\|Clock\|ControlGroups\|Hostname\)=/ nextgroup=sdBool,sdErr
 syn match sdExecKey contained /^\%(Nice\|OOMScoreAdjust\)=/ nextgroup=sdInt,sdErr
 syn match sdExecKey contained /^\%(CPUSchedulingPriority\|TimerSlackNSec\)=/ nextgroup=sdUInt,sdErr
+" 'ReadOnlyDirectories' et al. are obsolete versions of ReadOnlyPaths' et al.
 syn match sdExecKey contained /^\%(ReadWrite\|ReadOnly\|Inaccessible\)Directories=/ nextgroup=sdFileList
+syn match sdExecKey contained /^\%(ReadWrite\|ReadOnly\|Inaccessible\|Exec\|NoExec\)Paths=/ nextgroup=sdExecPathList
 syn match sdExecKey contained /^CapabilityBoundingSet=/ nextgroup=sdCapNameList
 syn match sdExecKey contained /^Capabilities=/ nextgroup=sdCapability,sdErr
 syn match sdExecKey contained /^UMask=/ nextgroup=sdOctal,sdErr
@@ -165,6 +167,8 @@ syn match   sdEnvDefs       contained /.*/ contains=sdEnvDef
 syn match   sdEnvDashFlag   contained /-/ nextgroup=sdFilename,sdErr
 syn match   sdEnvDef        contained /\i\+=/he=e-1
 syn match   sdFileList      contained /.*/ contains=sdFilename,sdErr
+syn match   sdExecPathList  contained /.*/ contains=sdExecPath,sdErr
+syn match   sdExecPath      contained /-\=+\=\/\S\+\s*/
 " CAPABILITIES WOOO {{{
 syn case ignore
 syn match   sdCapNameList   contained /.*/ contains=sdAnyCapName,sdErr
